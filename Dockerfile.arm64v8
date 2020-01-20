@@ -7,7 +7,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
 ARG BUILD_DEPENDENCIES="build-essential cpanminus"
 ARG DEPENDENCIES="iproute2 procps curl wget git perl perl-doc liblocal-lib-perl inetutils-ping zip unzip ffmpeg"
 
-ENV USER_ID="0" \
+ENV USER_ID="99" \
     GROUP_ID="100" \
     TIMEZONE="Europe/Berlin" \
     UPDATE="yes" \
@@ -67,7 +67,7 @@ RUN apt-get -qy update \
     && cpanm install URI::Escape \
     && cpanm install Sys::HostAddr \
     && cpanm install POSIX \
-    && cpanm install install utf8 \
+    && cpanm install utf8 \
     ### create necessary files/directories
     && mkdir -p /telerising \
     ### alter permissions
