@@ -1,4 +1,4 @@
-FROM amd64/debian:buster-slim AS build
+FROM amd64/debian:stretch-slim AS build
 
 LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
