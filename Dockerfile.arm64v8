@@ -50,24 +50,23 @@ RUN apt-get -qy update \
     ### install telerising dependencies
     && apt-get install -qy ${BUILD_DEPENDENCIES} ${DEPENDENCIES} \
     ### install cpan modules
-    && cpan App:cpanminus \
-    && cpanm install JSON \
-    && cpanm install Data::Dumper \
-    && cpanm install Time::Piece \
-    && cpanm install LWP \
-    && cpanm install LWP::Simple \
-    && cpanm install LWP::UserAgent \
-    && cpanm install LWP::Protocol::https \
-    && cpanm install HTTP::Daemon \
-    && cpanm install HTTP::Status \
-    && cpanm install HTTP::Request::Params \
-    && cpanm install HTTP::Request::Common \
-    && cpanm install HTTP::Cookies \
-    && cpanm install HTML::TreeBuilder \
-    && cpanm install URI::Escape \
-    && cpanm install Sys::HostAddr \
-    && cpanm install POSIX \
-    && cpanm install utf8 \
+    && cpan install JSON \
+    && cpan install Data::Dumper  \
+    && cpan install Time::Piece  \
+    && cpan install LWP  \
+    && cpan install LWP::Simple  \
+    && cpan install LWP::UserAgent  \
+    && cpan install LWP::Protocol::https  \
+    && cpan install HTTP::Daemon  \
+    && cpan install HTTP::Status  \
+    && cpan install HTTP::Request::Params  \
+    && cpan install HTTP::Request::Common  \
+    && cpan install HTTP::Cookies  \
+    && cpan install HTML::TreeBuilder  \
+    && cpan install URI::Escape  \
+    && cpan install Sys::HostAddr  \
+    && cpan install POSIX  \
+    && cpan install utf8  \
     ### create necessary files/directories
     && mkdir -p /telerising \
     ### alter permissions
