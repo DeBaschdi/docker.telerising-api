@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Updating Telerising-API"
+
+PWD=$(pwd)
+
+rm -rf /telerising/telerising
+git clone https://github.com/sunsettrack4/telerising.git /telerising/telerising
+
+cd /telerising/telerising
+git checkout master
+
+cp /telerising/telerising/zattoo.pl /telerising/zattoo.pl
+cp /telerising/telerising/README.md /telerising/README.md
+cp /telerising/telerising/LICENSE /telerising/LICENCE
+
+rm -rf /telerising/telerising
+
+cd ${PWD}

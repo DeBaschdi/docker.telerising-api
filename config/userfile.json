@@ -1,0 +1,9 @@
+{
+  "provider": "${PROVIDER}",
+  "login": "${LOGIN}",
+  "password": "${PASSWORD}",
+  "interface": "lo",
+  "server": "${SERVER}",
+  "ffmpeg_lib": "/usr/bin/ffmpeg",
+  "port": "8080"
+}
