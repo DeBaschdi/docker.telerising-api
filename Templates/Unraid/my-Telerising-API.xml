@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Telerising-API</Name>
+  <Repository>takealug/telerising-api:amd64</Repository>
+  <Registry>https://hub.docker.com/repository/docker/takealug/telerising-api</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Get advanced access to Zattoo internet streams</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://findicons.com/files/icons/2461/spiffy/256/zattoo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1579519169</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Get advanced access to Zattoo internet streams</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8181</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/docker/appdata/telerising</HostDir>
+      <ContainerDir>/telerising</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>USER_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GROUP_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>yes</Value>
+      <Name>UPDATE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>zattoo.com</Value>
+      <Name>PROVIDER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>firstname.lastname@example.com</Value>
+      <Name>LOGIN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>mypassword123</Value>
+      <Name>PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>fr5-0</Value>
+      <Name>SERVER</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Telerising" Target="/telerising" Default="" Mode="rw" Description="Container Path: /telerising" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/docker/appdata/telerising</Config>
+  <Config Name="Listenport" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8181</Config>
+  <Config Name="USER_ID" Target="USER_ID" Default="" Mode="" Description="Container Variable: USER_ID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="GROUP_ID" Target="GROUP_ID" Default="" Mode="" Description="Container Variable: GROUP_ID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="AUTO-UPDATE on restart" Target="UPDATE" Default="" Mode="" Description="Container Variable: UPDATE" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+  <Config Name="PROVIDER / RESELLER" Target="PROVIDER" Default="" Mode="" Description="Container Variable: PROVIDER" Type="Variable" Display="always" Required="false" Mask="false">zattoo.com</Config>
+  <Config Name="LOGIN" Target="LOGIN" Default="" Mode="" Description="Container Variable: LOGIN" Type="Variable" Display="always" Required="false" Mask="false">firstname.lastname@example.com</Config>
+  <Config Name="PASSWORD" Target="PASSWORD" Default="" Mode="" Description="Container Variable: PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">mypassword123</Config>
+  <Config Name="SERVER" Target="SERVER" Default="" Mode="" Description="Container Variable: SERVER" Type="Variable" Display="always" Required="false" Mask="false">fr5-0</Config>
+</Container>
