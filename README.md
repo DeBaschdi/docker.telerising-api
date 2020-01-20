@@ -20,6 +20,7 @@ docker run \
   -e LOGIN="firstname.lastname@example.com" \
   -e PASSWORD="mypassword123" \
   -e SERVER="fr5-0" \
+  -p 8080:8080 \
   -v {TELERISING_STORAGE}:/telerising \
   --name=telerising-api \
   --restart unless-stopped \
@@ -39,6 +40,7 @@ The available parameters in detail:
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
 | `PASSWORD` | no | [string] | mypassword123 | Your Account Password |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
+| `-p` | yes | [integer] | 8080 | Listenport |
 
 Frequently used volumes:
  
