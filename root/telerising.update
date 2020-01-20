@@ -14,6 +14,8 @@ cp /telerising/telerising/zattoo.pl /telerising/zattoo.pl
 cp /telerising/telerising/README.md /telerising/README.md
 cp /telerising/telerising/LICENSE /telerising/LICENCE
 
+cd /
+
 rm -rf /telerising/telerising
 
 cd ${PWD}
