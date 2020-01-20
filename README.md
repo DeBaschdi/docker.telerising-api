@@ -33,8 +33,8 @@ The available parameters in detail:
 
 | Parameter | Optional | Values/Type | Default | Description |
 | ---- | --- | --- | --- | --- |
-| `USER_ID` | yes | [integer] | 99 | UID to run easyepg as |
-| `GROUP_ID` | yes | [integer] | 100 | GID to run easyepg as |
+| `USER_ID` | yes | [integer] | 99 | UID to run telerising as |
+| `GROUP_ID` | yes | [integer] | 100 | GID to run telerising as |
 | `TIMEZONE` | yes | [string] | Europe/Berlin | Timezone for the container |
 | `PROVIDER` | no | [string] | zattoo.com | The Provider / Reseller u USE |
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
