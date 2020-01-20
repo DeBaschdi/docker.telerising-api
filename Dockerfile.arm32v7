@@ -26,7 +26,7 @@ COPY root/entrypoint /usr/local/sbin/entrypoint
 COPY root/telerising.process /usr/local/bin/telerising.process
 COPY root/telerising.update /usr/local/bin/telerising.update
 COPY root/packages.cleanup /usr/local/sbin/packages.cleanup
-COPY config/userfile.json /telerising/userfile.json
+COPY config/userfile.json /etc/userfile.json
 
 RUN apt-get -qy update \
     ### tweak some apt & dpkg settngs

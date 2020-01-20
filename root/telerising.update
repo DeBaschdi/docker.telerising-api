@@ -13,6 +13,7 @@ git checkout master
 cp /telerising/telerising/zattoo.pl /telerising/zattoo.pl
 cp /telerising/telerising/README.md /telerising/README.md
 cp /telerising/telerising/LICENSE /telerising/LICENCE
+cp /etc/userfile.json /telerising/userfile.json
 
 cd /
 
