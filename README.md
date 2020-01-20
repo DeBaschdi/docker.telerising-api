@@ -12,8 +12,8 @@ To learn how to manually start the container or about available parameters (you 
 ```
 docker run \
   -d \
-  -e USER_ID="1099" \
-  -e GROUP_ID="1099" \
+  -e USER_ID="99" \
+  -e GROUP_ID="100" \
   -e TIMEZONE="Europe/Berlin" \
   -e UPDATE="yes" \
   -e PROVIDER="zattoo.com" \
