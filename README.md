@@ -46,7 +46,7 @@ Frequently used volumes:
  
 | Volume | Optional | Description |
 | ---- | --- | --- |
-| `TELERISING_STORAGE` | no | The directory to persist easyepg to |
+| `TELERISING_STORAGE` | no | The directory to persist telerising to |
 
 
 When passing volumes please replace the name including the surrounding curly brackets with existing absolute paths with correct permissions.
