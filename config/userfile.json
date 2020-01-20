@@ -1,9 +1,9 @@
 {
-  "provider": "${PROVIDER}",
-  "login": "${LOGIN}",
-  "password": "${PASSWORD}",
+  "provider": "XXX",
+  "login": "YYY",
+  "password": "ZZZ",
   "interface": "lo",
-  "server": "${SERVER}",
+  "server": "XYZ",
   "ffmpeg_lib": "/usr/bin/ffmpeg",
   "port": "8080"
 }
