@@ -65,7 +65,7 @@ RUN apt-get -qy update \
     && cpan install HTTP::Cookies  \
     && cpan install HTML::TreeBuilder  \
     && cpan install URI::Escape  \
-    && cpan install Sys::HostAddr  \
+    && cpan install Sys::HostAddr --force \
     && cpan install POSIX  \
     && cpan install utf8  \
     ### create necessary files/directories
