@@ -1,5 +1,6 @@
 FROM arm64v8/debian:buster-slim AS build
-RUN curl -sL https://github.com/multiarch/qemu-user-static/releases/download/v4.2.0-2/x86_64_qemu-aarch64-static.tar.gz | tar -C ./root -zxf -
+WORKDIR /go/src/github.com/DeBaschdi/docker.telerising-api
+RUN curl -L https://github.com/multiarch/qemu-user-static/releases/download/v4.2.0-2/x86_64_qemu-aarch64-static.tar.gz | tar zxvf - -C . && mv x86_64_qemu-aarch64-static/qemu-aarch64-static .
 
 LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
@@ -23,7 +24,7 @@ ENV USER_ID="99" \
     LC_ALL="en_US.UTF-8" \
     CLEANUP="/tmp/* /var/tmp/* /var/log/* /var/lib/apt/lists/* /var/lib/{apt,dpkg,cache,log}/ /var/cache/apt/archives /usr/share/doc/ /usr/share/man/ /usr/share/locale/ /root/.cpan /root/.cpanm"
 
-COPY root/qemu-aarch64-static /usr/bin/
+COPY --from=builder /go/src/github.com/DeBaschdi/docker.telerising-api/qemu-aarch64-static /usr/bin
 COPY root/entrypoint /usr/local/sbin/entrypoint
 COPY root/telerising.process /usr/local/bin/telerising.process
 COPY root/telerising.update /usr/local/bin/telerising.update
