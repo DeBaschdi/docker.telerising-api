@@ -20,6 +20,14 @@ if [[ -z "${UPDATE}" ]]; then
   UPDATE="yes"
 fi
 
+if [[ -z "${PROVIDER}" ]]; then
+  PROVIDER="zattoo.com"
+fi
+
+if [[ -z "${SERVER}" ]]; then
+  SERVER="fr5-0"
+fi
+
 if [[ ! -f /telerising/zattoo.pl ]] || [[ "${UPDATE}" = "yes" ]]; then
   /usr/local/bin/telerising.update
 fi
@@ -38,5 +46,11 @@ chown -R ${USER_ID}:${GROUP_ID} /telerising
 chown -R ${USER_ID}:${GROUP_ID} /tmp
 chmod -R 775 /telerising
 chmod -R 775 /tmp
+
+if [[ -z "${LOGIN}" ]] || [[ -z "${PASSWORD}" ]]; then
+  echo "ERROR, you need to setup USERNAME and PASSWORD first"
+fi
+
+sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
 
 su -s /bin/bash -c "TERM=xterm /usr/local/bin/telerising.process" ${USERNAME}
