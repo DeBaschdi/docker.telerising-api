@@ -6,6 +6,8 @@ You will need to have `docker` installed on your system and the user you want to
 
 > **Note:** The image is a multi-arch build providing variants for amd64, arm32v7 and arm64v8 - the correct variant for your Architecture needs to be tagged eg :amd64 :arm32v7 :arm64v8
 
+> **Note:** Builds for arm64v8 are currently not technically possible.
+
 ## Technical info for Docker
 To learn how to manually start the container or about available parameters (you might need for your GUI used) see the following example:
 
@@ -37,6 +39,7 @@ The available parameters in detail:
 | `GROUP_ID` | yes | [integer] | 100 | GID to run telerising as |
 | `TIMEZONE` | yes | [string] | Europe/Berlin | Timezone for the container |
 | `PROVIDER` | no | [string] | zattoo.com | The Provider / Reseller u USE |
+| `UPDATE` | yes | yes/no | yes | Updates Telerising Script inside This Container each restart |
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
 | `PASSWORD` | no | [string] | mypassword123 | Your Account Password |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
