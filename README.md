@@ -54,4 +54,5 @@ Frequently used volumes:
 
 When passing volumes please replace the name including the surrounding curly brackets with existing absolute paths with correct permissions.
 
-
+## Support my work
+If you like my Work, please [![Paypal Donation Page](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://paypal.me/DeBaschdi) - thank you! :-)
