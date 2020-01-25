@@ -4,7 +4,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
       org.label-schema.name="docker.telerising-api"
 
-ARG BUILD_DEPENDENCIES="build-essential cpanminus"
+ARG BUILD_DEPENDENCIES="build-essential"
 ARG DEPENDENCIES="iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping zip unzip ffmpeg"
 
 ENV USER_ID="99" \
@@ -51,6 +51,8 @@ RUN apt-get -qy update \
     ### install telerising dependencies
     && apt-get install -qy ${BUILD_DEPENDENCIES} ${DEPENDENCIES} \
     ### install cpan modules
+    && cpan install CPAN \
+    && cpan install IO::Interface::Simple  \
     && cpan install JSON \
     && cpan install Data::Dumper  \
     && cpan install Time::Piece  \
@@ -65,7 +67,6 @@ RUN apt-get -qy update \
     && cpan install HTTP::Cookies  \
     && cpan install HTML::TreeBuilder  \
     && cpan install URI::Escape  \
-    && cpan install Sys::HostAddr --force \
     && cpan install POSIX  \
     && cpan install utf8  \
     ### create necessary files/directories
