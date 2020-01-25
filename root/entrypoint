@@ -45,7 +45,7 @@ fi
 chown -R ${USER_ID}:${GROUP_ID} /telerising
 chown -R ${USER_ID}:${GROUP_ID} /tmp
 chmod -R 775 /telerising
-chmod -R 775 /tmp
+chmod -R 777 /tmp
 
 if [[ -z "${LOGIN}" ]] || [[ -z "${PASSWORD}" ]]; then
   echo "ERROR, you need to setup USERNAME and PASSWORD first"
