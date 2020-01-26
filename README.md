@@ -22,7 +22,7 @@ docker run \
   -e PASSWORD="mypassword123" \
   -e SERVER="fr5-0" \
   -e NETWORK_DEVICE="eth0" \
-  -e FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
+  -e FFMPEG_HOST_LOCATION="\/usr\/bin\/ffmpeg" \
   -p 8180:8180 \
   -v {TELERISING_STORAGE}:/telerising \
   --name=telerising-api \
