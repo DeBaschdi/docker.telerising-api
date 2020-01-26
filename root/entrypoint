@@ -25,11 +25,11 @@ if [[ -z "${PROVIDER}" ]]; then
 fi
 
 if [[ -z "${NETWORK_DEVICE}" ]]; then
-  SERVER="eth0"
+  NETWORK_DEVICE="eth0"
 fi
 
 if [[ -z "${FFMPEG_HOST_LOCATION}" ]]; then
-  PROVIDER="/usr/bin/ffmpeg"
+  FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg"
 fi
 
 if [[ ! -f /telerising/zattoo.pl ]] || [[ "${UPDATE}" = "yes" ]]; then
