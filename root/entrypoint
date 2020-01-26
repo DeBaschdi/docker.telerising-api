@@ -24,8 +24,12 @@ if [[ -z "${PROVIDER}" ]]; then
   PROVIDER="zattoo.com"
 fi
 
-if [[ -z "${SERVER}" ]]; then
-  SERVER="fr5-0"
+if [[ -z "${NETWORK_DEVICE}" ]]; then
+  SERVER="eth0"
+fi
+
+if [[ -z "${FFMPEG_HOST_LOCATION}" ]]; then
+  PROVIDER="/usr/bin/ffmpeg"
 fi
 
 if [[ ! -f /telerising/zattoo.pl ]] || [[ "${UPDATE}" = "yes" ]]; then
@@ -51,6 +55,6 @@ if [[ -z "${LOGIN}" ]] || [[ -z "${PASSWORD}" ]]; then
   echo "ERROR, you need to setup USERNAME and PASSWORD first"
 fi
 
-sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
+sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
 
 su -s /bin/bash -c "TERM=xterm /usr/local/bin/telerising.process" ${USERNAME}

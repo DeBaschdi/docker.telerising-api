@@ -21,12 +21,15 @@ docker run \
   -e LOGIN="firstname.lastname@example.com" \
   -e PASSWORD="mypassword123" \
   -e SERVER="fr5-0" \
-  -p 8080:8080 \
+  -e NETWORK_DEVICE="eth0" \
+  -e FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
+  -p 8180:8180 \
   -v {TELERISING_STORAGE}:/telerising \
   --name=telerising-api \
   --restart unless-stopped \
   --tmpfs /tmp \
   --tmpfs /var/log \
+  --net="bridge" \
   takealug/telerising-api:tag
 ```
 
@@ -42,7 +45,12 @@ The available parameters in detail:
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
 | `PASSWORD` | no | [string] | mypassword123 | Your Account Password |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
-| `-p` | yes | [integer] | 8080 | Listenport |
+| `NETWORK_DEVICE` | yes | [string] | eth0 | The Devise listen to on (nedded for Host-Mode) |
+| `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your Host |
+| `-p` | yes | [integer] | 8180 | Listenport |
+| `--net` | yes | net/host | bridge | The Network Mode to run The Container in|
+
+> **Note:** If you plan to use VLC / tvheadend ect outside of your Docker network (e.g. 172.17.0.X) to use, you should run the container in --net = "host" and you must also enter the correct -e NETWORK_DEVICE = "XXX" of your host system.
 
 Frequently used volumes:
  
