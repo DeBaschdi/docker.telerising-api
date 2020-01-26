@@ -24,6 +24,10 @@ if [[ -z "${PROVIDER}" ]]; then
   PROVIDER="zattoo.com"
 fi
 
+if [[ -z "${SERVER}" ]]; then
+  SERVER="fr5-0"
+fi
+
 if [[ -z "${NETWORK_DEVICE}" ]]; then
   NETWORK_DEVICE="eth0"
 fi
