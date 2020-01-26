@@ -48,7 +48,7 @@ The available parameters in detail:
 | `NETWORK_DEVICE` | yes | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
 | `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your Host |
 | `-p` | yes | [integer] | 8180 | Listenport |
-| `--net` | yes | net/host | bridge | The Network Mode to run The Container in|
+| `--net` | yes | bridge/host | bridge | The Network Mode to run The Container in|
 
 > **Note:** If you plan to use VLC / tvheadend ect outside of your Docker network (e.g. 172.17.0.X) to use, you should run the container in --net = "host" and you must also enter the correct -e NETWORK_DEVICE = "XXX" of your host system.
 
