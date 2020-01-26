@@ -2,8 +2,8 @@
   "provider": "XXX",
   "login": "YYY",
   "password": "ZZZ",
-  "interface": "eth0",
+  "interface": "AAA",
   "server": "XYZ",
-  "ffmpeg_lib": "/usr/bin/ffmpeg",
-  "port": "8080"
+  "ffmpeg_lib": "BBB",
+  "port": "8180"
 }

@@ -5,7 +5,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.name="docker.telerising-api"
 
 ARG BUILD_DEPENDENCIES="build-essential"
-ARG DEPENDENCIES="iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping zip unzip ffmpeg"
+ARG DEPENDENCIES="iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping"
 
 ENV USER_ID="99" \
     GROUP_ID="100" \
@@ -15,6 +15,8 @@ ENV USER_ID="99" \
     LOGIN="firstname.lastname@example.com" \
     PASSWORD="mypassword123" \
     SERVER="fr5-0" \
+    NETWORK_DEVICE="eth0" \
+    FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
     DEBIAN_FRONTEND="noninteractive" \
     TERM=xterm \
     LANGUAGE="en_US.UTF-8" \
@@ -83,7 +85,7 @@ RUN apt-get -qy update \
 ENTRYPOINT [ "/usr/local/sbin/entrypoint" ]
 
 VOLUME /telerising
-EXPOSE 8080
+EXPOSE 8180
 
 FROM build
 
