@@ -29,7 +29,7 @@ if [[ -z "${NETWORK_DEVICE}" ]]; then
 fi
 
 if [[ -z "${FFMPEG_HOST_LOCATION}" ]]; then
-  FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg"
+  FFMPEG_HOST_LOCATION="\/usr\/bin\/ffmpeg"
 fi
 
 if [[ ! -f /telerising/zattoo.pl ]] || [[ "${UPDATE}" = "yes" ]]; then
