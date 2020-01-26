@@ -45,7 +45,7 @@ The available parameters in detail:
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
 | `PASSWORD` | no | [string] | mypassword123 | Your Account Password |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
-| `NETWORK_DEVICE` | yes | [string] | eth0 | The Devise listen to on (nedded for Host-Mode) |
+| `NETWORK_DEVICE` | yes | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
 | `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your Host |
 | `-p` | yes | [integer] | 8180 | Listenport |
 | `--net` | yes | net/host | bridge | The Network Mode to run The Container in|
