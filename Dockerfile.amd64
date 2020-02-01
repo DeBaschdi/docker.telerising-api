@@ -5,7 +5,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.name="docker.telerising-api"
 
 ARG BUILD_DEPENDENCIES="build-essential"
-ARG DEPENDENCIES="iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping"
+ARG DEPENDENCIES="iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping libio-socket-ssl-perl libnet-ssleay-perl libio-socket-ip-perl"
 
 ENV USER_ID="99" \
     GROUP_ID="100" \
@@ -53,6 +53,8 @@ RUN apt-get -qy update \
     && apt-get install -qy ${BUILD_DEPENDENCIES} ${DEPENDENCIES} \
     ### install cpan modules
     && cpan install CPAN \
+    && cpan install CPAN::DistnameInfo \
+    && cpan install IO::Socket::SSL \
     && cpan install IO::Interface::Simple  \
     && cpan install JSON \
     && cpan install Data::Dumper  \
@@ -61,7 +63,6 @@ RUN apt-get -qy update \
     && cpan install LWP::Simple  \
     && cpan install LWP::UserAgent  \
     && cpan install LWP::Protocol::https  \
-    && cpan install IO::Socket::SSL \
     && cpan install Mozilla::CA \
     && cpan install HTTP::Status  \
     && cpan install HTTP::Request::Params  \
