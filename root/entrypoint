@@ -32,6 +32,10 @@ if [[ -z "${NETWORK_DEVICE}" ]]; then
   NETWORK_DEVICE="eth0"
 fi
 
+if [[ -z "${SSL_MODE}" ]]; then
+  SSL_MODE="0"
+fi
+
 if [[ -z "${FFMPEG_HOST_LOCATION}" ]]; then
   FFMPEG_HOST_LOCATION="\/usr\/bin\/ffmpeg"
 fi
@@ -59,6 +63,6 @@ if [[ -z "${LOGIN}" ]] || [[ -z "${PASSWORD}" ]]; then
   echo "ERROR, you need to setup USERNAME and PASSWORD first"
 fi
 
-sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
+sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g;s/CCC/${SSL_MODE}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
 
 su -s /bin/bash -c "TERM=xterm /usr/local/bin/telerising.process" ${USERNAME}
