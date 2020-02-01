@@ -21,6 +21,7 @@ docker run \
   -e LOGIN="firstname.lastname@example.com" \
   -e PASSWORD="mypassword123" \
   -e SERVER="fr5-0" \
+  -e SSL_MODE="0" \
   -e NETWORK_DEVICE="eth0" \
   -e FFMPEG_HOST_LOCATION="\/usr\/bin\/ffmpeg" \
   -p 8180:8180 \
@@ -45,6 +46,7 @@ The available parameters in detail:
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
 | `PASSWORD` | no | [string] | mypassword123 | Your Account Password |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
+| `SSL_MODE` | yes | 0/1 | 0 | Enable / Disable SSL Verify with Provider |
 | `NETWORK_DEVICE` | yes | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
 | `FFMPEG_HOST_LOCATION` | yes | [string] | \\/usr\\/bin\\/ffmpeg | The Path to ffmpeg on your Host (Special Chars needs to be escapet (\\)|
 | `-p` | yes | [integer] | 8180 | Listenport |

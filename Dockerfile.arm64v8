@@ -62,7 +62,8 @@ RUN apt-get -qy update \
     && cpan install LWP::Simple  \
     && cpan install LWP::UserAgent  \
     && cpan install LWP::Protocol::https  \
-    && cpan install HTTP::Daemon  \
+    && cpan install IO::Socket::SSL \
+    && cpan install Mozilla::CA \
     && cpan install HTTP::Status  \
     && cpan install HTTP::Request::Params  \
     && cpan install HTTP::Request::Common  \

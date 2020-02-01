@@ -5,5 +5,6 @@
   "interface": "AAA",
   "server": "XYZ",
   "ffmpeg_lib": "BBB",
-  "port": "8180"
+  "port": "8180",
+  "ssl_mode": "CCC"
 }
