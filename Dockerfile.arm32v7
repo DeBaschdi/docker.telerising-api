@@ -12,6 +12,7 @@ ENV USER_ID="99" \
     TIMEZONE="Europe/Berlin" \
     UPDATE="yes" \
     PROVIDER="zattoo.com" \
+    SSL_MODE="0" \
     LOGIN="firstname.lastname@example.com" \
     PASSWORD="mypassword123" \
     SERVER="fr5-0" \
