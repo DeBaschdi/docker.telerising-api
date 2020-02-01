@@ -55,7 +55,6 @@ RUN apt-get -qy update \
     ### install cpan modules
     && cpan install CPAN \
     && cpan install CPAN::DistnameInfo \
-    && cpan install IO::Socket::SSL \
     && cpan install IO::Interface::Simple  \
     && cpan install JSON \
     && cpan install Data::Dumper  \
