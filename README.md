@@ -20,6 +20,7 @@ docker run \
   -e PROVIDER="zattoo.com" \
   -e LOGIN="firstname.lastname@example.com" \
   -e PASSWORD="mypassword123" \
+  -e YOUTH_PROTECTION_PIN="1234" \
   -e SERVER="fr5-0" \
   -e SSL_MODE="0" \
   -e NETWORK_DEVICE="eth0" \
@@ -45,10 +46,11 @@ The available parameters in detail:
 | `UPDATE` | yes | yes/no | yes | Updates Telerising Script inside This Container each restart |
 | `LOGIN` | no | [string] | firstname.lastname@example.com | Your Provider Account NAME |
 | `PASSWORD` | no | [string] | mypassword123 | Your Account Password |
+| `YOUTH_PROTECTION_PIN` | yes | [string] | 123 | Your Youth Protection Pin to unlock FSK Content |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
 | `SSL_MODE` | yes | 0/1 | 0 | Enable / Disable SSL Verify with Provider |
 | `NETWORK_DEVICE` | yes | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
-| `FFMPEG_HOST_LOCATION` | yes | [string] | \\/usr\\/bin\\/ffmpeg | The Path to ffmpeg on your Host (Special Chars needs to be escapet (\\)|
+| `FFMPEG_HOST_LOCATION` | yes | [string] | \\/usr\\/bin\\/ffmpeg | The Path to ffmpeg on your TVH/FFMPEG-Client (Special Chars needs to be escapet (\\)|
 | `-p` | yes | [integer] | 8180 | Listenport |
 | `--net` | yes | bridge/host | bridge | The Network Mode to run The Container in|
 
@@ -65,3 +67,9 @@ When passing volumes please replace the name including the surrounding curly bra
 
 ## Support my work
 If you like my Work, please [![Paypal Donation Page](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://paypal.me/DeBaschdi) - thank you! :-)
+
+## Unraid Template
+> **Note:** An Template for Unraid can be found here : https://raw.githubusercontent.com/DeBaschdi/docker.telerising-api/master/Templates/Unraid/my-Telerising-API.xml
+> Please safe it to into \flash\config\plugins\dockerMan\templates-user, after that you can use this Template in Unraids Webui. Docker > Add Container > Select Template and choose easyEPG
+
+<img src="https://raw.githubusercontent.com/DeBaschdi/docker.easyepg/master/Templates/Unraid/Screenshot.png" height="325" width="265">

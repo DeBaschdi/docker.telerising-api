@@ -14,7 +14,7 @@ cp /telerising/telerising/zattoo.pl /telerising/zattoo.pl
 cp /telerising/telerising/README.md /telerising/README.md
 cp /telerising/telerising/LICENSE /telerising/LICENCE
 cp /etc/userfile.json /telerising/userfile.json
-sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g;s/CCC/${SSL_MODE}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
+sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g;s/CCC/${SSL_MODE}/g;s/DDD/${YOUTH_PROTECTION_PIN}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
 
 cd /
 
