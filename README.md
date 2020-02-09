@@ -70,6 +70,6 @@ If you like my Work, please [![Paypal Donation Page](https://www.paypalobjects.c
 
 ## Unraid Template
 > **Note:** An Template for Unraid can be found here : https://raw.githubusercontent.com/DeBaschdi/docker.telerising-api/master/Templates/Unraid/my-Telerising-API.xml
-> Please safe it to into \flash\config\plugins\dockerMan\templates-user, after that you can use this Template in Unraids Webui. Docker > Add Container > Select Template and choose easyEPG
+> Please safe it to into \flash\config\plugins\dockerMan\templates-user, after that you can use this Template in Unraids Webui. Docker > Add Container > Select Template and choose Telerising-API
 
 <img src="https://raw.githubusercontent.com/DeBaschdi/docker.easyepg/master/Templates/Unraid/Screenshot.png" height="325" width="265">
