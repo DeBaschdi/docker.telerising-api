@@ -6,5 +6,6 @@
   "server": "XYZ",
   "ffmpeg_lib": "BBB",
   "port": "8180",
-  "ssl_mode": "CCC"
+  "ssl_mode": "CCC",
+  "youth_protection_pin": "DDD"
 }

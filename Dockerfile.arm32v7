@@ -15,6 +15,7 @@ ENV USER_ID="99" \
     SSL_MODE="0" \
     LOGIN="firstname.lastname@example.com" \
     PASSWORD="mypassword123" \
+    YOUTH_PROTECTION_PIN="1234" \
     SERVER="fr5-0" \
     NETWORK_DEVICE="eth0" \
     FFMPEG_HOST_LOCATION="\/usr\/bin\/ffmpeg" \

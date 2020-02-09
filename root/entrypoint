@@ -24,6 +24,10 @@ if [[ -z "${PROVIDER}" ]]; then
   PROVIDER="zattoo.com"
 fi
 
+if [[ -z "${YOUTH_PROTECTION_PIN}" ]]; then
+  YOUTH_PROTECTION_PIN="1234"
+fi
+
 if [[ -z "${SERVER}" ]]; then
   SERVER="fr5-0"
 fi
@@ -63,6 +67,6 @@ if [[ -z "${LOGIN}" ]] || [[ -z "${PASSWORD}" ]]; then
   echo "ERROR, you need to setup USERNAME and PASSWORD first"
 fi
 
-sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g;s/CCC/${SSL_MODE}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
+sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g;s/CCC/${SSL_MODE}/g;s/DDD/${YOUTH_PROTECTION_PIN}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
 
 su -s /bin/bash -c "TERM=xterm /usr/local/bin/telerising.process" ${USERNAME}
