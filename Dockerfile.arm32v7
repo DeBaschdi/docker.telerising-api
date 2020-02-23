@@ -5,7 +5,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.name="docker.telerising-api"
 
 ARG BUILD_DEPENDENCIES="build-essential"
-ARG DEPENDENCIES="iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping libio-socket-ssl-perl libnet-ssleay-perl libio-socket-ip-perl libpar-packer-perl"
+ARG DEPENDENCIES="jq iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping libio-socket-ssl-perl libnet-ssleay-perl libio-socket-ip-perl libpar-packer-perl"
 
 ENV USER_ID="99" \
     GROUP_ID="100" \
@@ -75,6 +75,7 @@ RUN apt-get -qy update \
     && cpan install URI::Escape  \
     && cpan install POSIX  \
     && cpan install utf8  \
+    && cpan install IO::Tee  \
     ### create necessary files/directories
     && mkdir -p /telerising \
     ### alter permissions

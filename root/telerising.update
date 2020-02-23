@@ -14,7 +14,44 @@ cp /telerising/telerising/zattoo.pl /telerising/zattoo.pl
 cp /telerising/telerising/README.md /telerising/README.md
 cp /telerising/telerising/LICENSE /telerising/LICENCE
 cp /etc/userfile.json /telerising/userfile.json
-sed "s/XXX/${PROVIDER}/g;s/YYY/${LOGIN}/g;s/ZZZ/${PASSWORD}/g;s/XYZ/${SERVER}/g;s/AAA/${NETWORK_DEVICE}/g;s/BBB/${FFMPEG_HOST_LOCATION}/g;s/CCC/${SSL_MODE}/g;s/DDD/${YOUTH_PROTECTION_PIN}/g" /etc/userfile.json 2> /dev/null > /telerising/userfile.json
+
+## If no Adress is given, use Interface instead Hostname / IP
+if [[ -z "${ADDRESS}" ]]; then
+  echo""
+  echo "No Ip or Hostname set, using Interface $NETWORK_DEVICE"
+  echo""
+  jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg NETWORK_DEVICE $NETWORK_DEVICE --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN '{
+      "provider": $PROVIDER,
+      "login": $LOGIN,
+      "password": $PASSWORD,
+      "interface": $NETWORK_DEVICE,
+      "server": $SERVER,
+      "ffmpeg_lib": $FFMPEG_HOST_LOCATION,
+      "port": "8180",
+      "ssl_mode": $SSL_MODE,
+      "youth_protection_pin": $YOUTH_PROTECTION_PIN
+    }
+  ' < /etc/userfile.json > /telerising/userfile.json
+fi
+
+## If Adress is given, use IP / Hostname instead Interface
+if [[ "${ADDRESS}" ]]; then
+  echo""
+  echo "Hostname / IP $ADDRESS has ben entered, ignoring Interface $NETWORK_DEVICE"
+  echo""
+  jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg ADDRESS $ADDRESS --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN '{
+      "provider": $PROVIDER,
+      "login": $LOGIN,
+      "password": $PASSWORD,
+      "address": $ADDRESS,
+      "server": $SERVER,
+      "ffmpeg_lib": $FFMPEG_HOST_LOCATION,
+      "port": "8180",
+      "ssl_mode": $SSL_MODE,
+      "youth_protection_pin": $YOUTH_PROTECTION_PIN
+    }
+  ' < /etc/userfile.json > /telerising/userfile.json
+fi
 
 cd /
 

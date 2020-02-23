@@ -24,7 +24,7 @@ docker run \
   -e SERVER="fr5-0" \
   -e SSL_MODE="0" \
   -e NETWORK_DEVICE="eth0" \
-  -e FFMPEG_HOST_LOCATION="\/usr\/bin\/ffmpeg" \
+  -e FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
   -p 8180:8180 \
   -v {TELERISING_STORAGE}:/telerising \
   --name=telerising-api \
@@ -49,9 +49,16 @@ The available parameters in detail:
 | `YOUTH_PROTECTION_PIN` | yes | [string] | 123 | Your Youth Protection Pin to unlock FSK Content |
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
 | `SSL_MODE` | yes | 0/1 | 0 | Enable / Disable SSL Verify with Provider |
-| `NETWORK_DEVICE` | yes | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
-| `FFMPEG_HOST_LOCATION` | yes | [string] | \\/usr\\/bin\\/ffmpeg | The Path to ffmpeg on your TVH/FFMPEG-Client (Special Chars needs to be escapet (\\)|
+| `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your TVH/FFMPEG-Client |
 | `-p` | yes | [integer] | 8180 | Listenport |
+
+
+Network Settings:
+
+| Parameter | Optional | Values/Type | Default | Description |
+| ---- | --- | --- | --- | --- |
+| `NETWORK_DEVICE` | no | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
+| `ADDRESS` | yes | [string] | --- | If you Setup an IP ADDRESS or Hostname like 192.168.0.1 or example.com, Telerising is is listen to that Setting, `NETWORK_DEVICE` will be Ignored |
 | `--net` | yes | bridge/host | bridge | The Network Mode to run The Container in|
 
 > **Note:** If you plan to use VLC / tvheadend ect outside of your Docker network (e.g. 172.17.0.X) to use, you should run the container in --net = "host" and you must also enter the correct -e NETWORK_DEVICE = "XXX" of your host system.
