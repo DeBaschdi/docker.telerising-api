@@ -3,6 +3,7 @@
   "login": "YYY",
   "password": "ZZZ",
   "interface": "AAA",
+  "address": "ABC",
   "server": "XYZ",
   "ffmpeg_lib": "BBB",
   "port": "8180",
