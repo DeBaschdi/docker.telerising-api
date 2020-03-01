@@ -76,6 +76,7 @@ RUN apt-get -qy update \
     && cpan install POSIX  \
     && cpan install utf8  \
     && cpan install IO::Tee  \
+    && cpan install Log::Log4perl  \
     ### create necessary files/directories
     && mkdir -p /telerising \
     ### alter permissions
