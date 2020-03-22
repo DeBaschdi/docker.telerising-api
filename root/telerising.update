@@ -20,7 +20,7 @@ if [[ -z "${ADDRESS}" ]]; then
   echo""
   echo "No Ip or Hostname set, using Interface $NETWORK_DEVICE"
   echo""
-  jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg NETWORK_DEVICE $NETWORK_DEVICE --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN '{
+  jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg NETWORK_DEVICE $NETWORK_DEVICE --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN --arg PLATFORM $PLATFORM --arg BW $BW --arg PROFILE $PROFILE --arg AUDIO2 $AUDIO2 --arg DOLBY $DOLBY --arg IGNORE_MAXRATE $IGNORE_MAXRATE --arg FFMPEG_LOGLEVEL $FFMPEG_LOGLEVEL --arg ONDEMAND $ONDEMAND '{
       "provider": $PROVIDER,
       "login": $LOGIN,
       "password": $PASSWORD,
@@ -29,7 +29,15 @@ if [[ -z "${ADDRESS}" ]]; then
       "ffmpeg_lib": $FFMPEG_HOST_LOCATION,
       "port": "8180",
       "ssl_mode": $SSL_MODE,
-      "youth_protection_pin": $YOUTH_PROTECTION_PIN
+      "youth_protection_pin": $YOUTH_PROTECTION_PIN,
+      "platform": $PLATFORM,
+      "bw": $BW,
+      "profile": $PROFILE,
+      "audio2": $AUDIO2,
+      "dolby": $DOLBY,
+      "ignore_maxrate": $IGNORE_MAXRATE,
+      "loglevel": $FFMPEG_LOGLEVEL,
+      "ondemand": $ONDEMAND
     }
   ' < /etc/userfile.json > /telerising/userfile.json
 fi
@@ -39,7 +47,7 @@ if [[ "${ADDRESS}" ]]; then
   echo""
   echo "Hostname / IP $ADDRESS has ben entered, ignoring Interface $NETWORK_DEVICE"
   echo""
-  jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg ADDRESS $ADDRESS --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN '{
+  jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg ADDRESS $ADDRESS --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN --arg PLATFORM $PLATFORM --arg BW $BW --arg PROFILE $PROFILE --arg AUDIO2 $AUDIO2 --arg DOLBY $DOLBY --arg IGNORE_MAXRATE $IGNORE_MAXRATE --arg FFMPEG_LOGLEVEL $FFMPEG_LOGLEVEL --arg ONDEMAND $ONDEMAND '{
       "provider": $PROVIDER,
       "login": $LOGIN,
       "password": $PASSWORD,
@@ -48,7 +56,15 @@ if [[ "${ADDRESS}" ]]; then
       "ffmpeg_lib": $FFMPEG_HOST_LOCATION,
       "port": "8180",
       "ssl_mode": $SSL_MODE,
-      "youth_protection_pin": $YOUTH_PROTECTION_PIN
+      "youth_protection_pin": $YOUTH_PROTECTION_PIN,
+      "platform": $PLATFORM,
+      "bw": $BW,
+      "profile": $PROFILE,
+      "audio2": $AUDIO2,
+      "dolby": $DOLBY,
+      "ignore_maxrate": $IGNORE_MAXRATE,
+      "loglevel": $FFMPEG_LOGLEVEL,
+      "ondemand": $ONDEMAND
     }
   ' < /etc/userfile.json > /telerising/userfile.json
 fi
