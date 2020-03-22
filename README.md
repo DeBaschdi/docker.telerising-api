@@ -25,6 +25,14 @@ docker run \
   -e SSL_MODE="0" \
   -e NETWORK_DEVICE="eth0" \
   -e FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
+  -e PLATFORM="hls5" \
+  -e BW="8000" \
+  -e PROFILE="1" \
+  -e AUDIO2="false" \
+  -e DOLBY="false" \
+  -e IGNORE_MAXRATE="false" \
+  -e FFMPEG_LOGLEVEL="fatal" \
+  -e ONDEMAND="false" \
   -p 8180:8180 \
   -v {TELERISING_STORAGE}:/telerising \
   --name=telerising-api \
@@ -51,7 +59,19 @@ The available parameters in detail:
 | `SSL_MODE` | yes | 0/1 | 0 | Enable / Disable SSL Verify with Provider |
 | `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your TVH/FFMPEG-Client |
 | `-p` | yes | [integer] | 8180 | Listenport |
+| `ONDEMAND` | yes | true/false | false | Enable Video on Demand |
 
+Default Client Settings, can be overwritten by Querystrings:
+
+| Parameter | Optional | Values/Type | Default | Description |
+| ---- | --- | --- | --- | --- |
+| `PLATFORM` | yes | hls/hls5 | hls5 | hls - for: VLC, IPTV Simple, hls5 - for: ffmpeg, tvHeadend |
+| `BW` | yes | 8000/4999/5000/3000/2999/1500 | 8000 | Streamquality |
+| `PROFILE` | yes | 1/2/3/4 | 1 | Use 2 Audio Streams |
+| `AUDIO2` | yes | true/false | false | use 2nd audio stream (HLS5 only) |
+| `DOLBY` | yes | true/false | false | use 1st Audio Stream ,- Dolby audio (HLS5 only) |
+| `IGNORE_MAXRATE` | yes | true/false | false | The stream quality check can be disabled by using the `IGNORE_MAXRATE` value (set to "true") |
+| `FFMPEG_LOGLEVEL` | yes | [string] | fatal |  The ffmpeg loglevel can be changed by using the "loglevel" value. |
 
 Network Settings:
 
