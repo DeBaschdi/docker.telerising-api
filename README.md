@@ -24,6 +24,7 @@ docker run \
   -e SERVER="fr5-0" \
   -e SSL_MODE="0" \
   -e NETWORK_DEVICE="eth0" \
+  -e PORT="8180" \
   -e FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
   -e PLATFORM="hls5" \
   -e BW="8000" \
@@ -58,7 +59,6 @@ The available parameters in detail:
 | `SERVER` | yes | [string] | fr5-0 | The Server u want to use |
 | `SSL_MODE` | yes | 0/1 | 0 | Enable / Disable SSL Verify with Provider |
 | `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your TVH/FFMPEG-Client |
-| `-p` | yes | [integer] | 8180 | Listenport |
 | `ONDEMAND` | yes | true/false | false | Enable Video on Demand |
 
 Default Client Settings, can be overwritten by Querystrings:
@@ -79,6 +79,8 @@ Network Settings:
 | ---- | --- | --- | --- | --- |
 | `NETWORK_DEVICE` | no | [string] | eth0 | The Device listen to on (nedded for Host-Mode) |
 | `ADDRESS` | yes | [string] | --- | If you Setup an IP ADDRESS or Hostname like 192.168.0.1 or example.com, Telerising is is listen to that Setting, `NETWORK_DEVICE` will be Ignored |
+| `PORT` | yes | [integer] | 8180 | Telerising Listenport inside this Container (Hostmode)|
+| `-p` | yes | [integer] | 8180:8180 | Map Container Listenport to Host Device Listen Port (Bridge Mode)|
 | `--net` | yes | bridge/host | bridge | The Network Mode to run The Container in|
 
 > **Note:** If you plan to use VLC / tvheadend ect outside of your Docker network (e.g. 172.17.0.X) to use, you should run the container in --net = "host" and you must also enter the correct -e NETWORK_DEVICE = "XXX" of your host system.
