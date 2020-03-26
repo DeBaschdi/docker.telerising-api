@@ -5,7 +5,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.name="docker.telerising-api"
 
 ARG BUILD_DEPENDENCIES="build-essential"
-ARG DEPENDENCIES="jq iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping libio-socket-ssl-perl libnet-ssleay-perl libio-socket-ip-perl libpar-packer-perl"
+ARG DEPENDENCIES="sed jq iproute2 procps curl wget git perl nano libwww-perl net-tools perl-doc liblocal-lib-perl inetutils-ping libio-socket-ssl-perl libnet-ssleay-perl libio-socket-ip-perl libpar-packer-perl"
 
 ENV USER_ID="99" \
     GROUP_ID="100" \
@@ -19,8 +19,8 @@ ENV USER_ID="99" \
     SERVER="fr5-0" \
     NETWORK_DEVICE="eth0" \
     PORT="8180" \
-    SSL_DOMAIN="" \
-    SERVER_PIN="" \
+    SSL_DOMAIN="empty" \
+    SERVER_PIN="empty" \
     FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
     PLATFORM="hls5" \
     BW="8000" \

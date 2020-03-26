@@ -73,6 +73,8 @@ if [[ "${ADDRESS}" ]]; then
   ' < /etc/userfile.json > /telerising/userfile.json
 fi
 
+sed -i 's/empty/''/g' /telerising/userfile.json
+
 cd /
 
 rm -rf /telerising/telerising
