@@ -45,11 +45,11 @@ if [[ -z "${SSL_MODE}" ]]; then
 fi
 
 if [[ -z "${SSL_DOMAIN}" ]]; then
-  SSL_DOMAIN=''
+  SSL_DOMAIN='empty'
 fi
 
 if [[ -z "${SERVER_PIN}" ]]; then
-  SERVER_PIN=''
+  SERVER_PIN='empty'
 fi
 
 
@@ -173,5 +173,7 @@ if [[ "${ADDRESS}" ]]; then
     }
   ' < /etc/userfile.json > /telerising/userfile.json
 fi
+
+sed -i 's/empty/''/g' /telerising/userfile.json
 
 su -s /bin/bash -c "TERM=xterm /usr/local/bin/telerising.process" ${USERNAME}

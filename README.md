@@ -25,8 +25,8 @@ docker run \
   -e SSL_MODE="0" \
   -e NETWORK_DEVICE="eth0" \
   -e PORT="8180" \
-  -e SSL_DOMAIN="" \
-  -e SERVER_PIN="" \
+  -e SSL_DOMAIN="empty" \
+  -e SERVER_PIN="empty" \
   -e FFMPEG_HOST_LOCATION="/usr/bin/ffmpeg" \
   -e PLATFORM="hls5" \
   -e BW="8000" \
@@ -62,7 +62,7 @@ The available parameters in detail:
 | `SSL_MODE` | yes | 0/1 | 0 | Enable / Disable SSL Verify with Provider |
 | `FFMPEG_HOST_LOCATION` | yes | [string] | /usr/bin/ffmpeg | The Path to ffmpeg on your TVH/FFMPEG-Client |
 | `ONDEMAND` | yes | true/false | false | Enable Video on Demand |
-| `SERVER_PIN` | yes | [string] | -- | Set an Protection Pin four your API, unlock with querystring &code=[string] |
+| `SERVER_PIN` | yes | [string] | empty | Set an Protection Pin four your API, unlock with querystring &code=[string] |
 
 
 Default Client Settings, can be overwritten by Querystrings:
@@ -86,7 +86,7 @@ Network Settings:
 | `PORT` | yes | [integer] | 8180 | Telerising Listenport inside this Container (Hostmode)|
 | `-p` | yes | [integer] | 8180:8180 | Map Container Listenport to Host Device Listen Port (Bridge Mode)|
 | `--net` | yes | bridge/host | bridge | The Network Mode to run The Container in|
-| `SSL_DOMAIN` | yes | mydomain.de/folder | -- | Set a Domain Name if you are behind an SSL Proxy |
+| `SSL_DOMAIN` | yes | mydomain.de/folder | empty | Set a Domain Name if you are behind an SSL Proxy |
 
 > **Note:** If you plan to use VLC / tvheadend ect outside of your Docker network (e.g. 172.17.0.X) to use, you should run the container in --net = "host" and you must also enter the correct -e NETWORK_DEVICE = "XXX" of your host system.
 
