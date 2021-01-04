@@ -91,7 +91,11 @@ if [[ -z "${ONDEMAND}" ]]; then
   ONDEMAND='false'
 fi
 
-
+# Wait until DNS is available
+until host github.com > /dev/null; do
+  echo "DNS not yet available"
+  sleep 1;
+done
 
 if [[ ! -f /telerising/zattoo.pl ]] || [[ "${UPDATE}" = "yes" ]]; then
   /usr/local/bin/telerising.update
