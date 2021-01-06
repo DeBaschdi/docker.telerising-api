@@ -47,7 +47,7 @@ fi
 ## If Adress is given, use IP / Hostname instead Interface
 if [[ "${ADDRESS}" ]]; then
   echo""
-  echo "Hostname / IP $ADDRESS has ben entered, ignoring Interface $NETWORK_DEVICE"
+  echo "Hostname / IP $ADDRESS has been entered, ignoring Interface $NETWORK_DEVICE"
   echo""
   jq --arg PROVIDER $PROVIDER --arg LOGIN $LOGIN --arg PASSWORD $PASSWORD --arg ADDRESS $ADDRESS --arg SERVER $SERVER --arg FFMPEG_HOST_LOCATION $FFMPEG_HOST_LOCATION --arg PORT $PORT --arg SSL_MODE $SSL_MODE --arg YOUTH_PROTECTION_PIN $YOUTH_PROTECTION_PIN --arg PLATFORM $PLATFORM --arg BW $BW --arg PROFILE $PROFILE --arg AUDIO2 $AUDIO2 --arg DOLBY $DOLBY --arg IGNORE_MAXRATE $IGNORE_MAXRATE --arg FFMPEG_LOGLEVEL $FFMPEG_LOGLEVEL --arg ONDEMAND $ONDEMAND --arg SERVER_PIN $SERVER_PIN --arg SSL_DOMAIN $SSL_DOMAIN '{
       "provider": $PROVIDER,
